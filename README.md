@@ -40,7 +40,7 @@ The scheduler provides a report() method that lists upcoming events, with option
 ```
 scheduler.schedule(Date.now() + 2000, "myTopic", {payload: "foo"});
 scheduler.schedule(Date.now() + 4000, "myTopic", {payload: "bar"});
-scheduler.report(); // returns an array of pending events
+scheduler.report(); // returns an array of pending events ordered by how many milliseconds away they are.
 ```
 
 Or, alternately, you can call scheduler.formatReport() to pretty-print a set of pending events for debugging:
@@ -57,6 +57,6 @@ Pending Scheduler events:
     [myTopic] Object {payload: "foo"}
   In 3998ms, scheduler will publish:
     [myTopic] Object {payload: "bar"}
-    
+
 */
 ```
