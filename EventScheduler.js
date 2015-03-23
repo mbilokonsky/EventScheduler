@@ -78,7 +78,7 @@ var createScheduler = function(dispatch) {
         });
       }
 
-      return true;
+      return true; // function passed into [].every() MUST return true or it'll abort itself.
     });
 
     return output;
